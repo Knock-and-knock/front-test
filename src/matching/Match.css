@@ -1,0 +1,15 @@
+@media (min-width: 390px) {
+  .match-container{
+    max-width: 390px;
+    margin: 0 auto;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+    position: relative;
+    background-color: #fff;
+  }
+  input:focus{
+    outline: none;
+    border-bottom: #80BAFF;
+  }
+
+}

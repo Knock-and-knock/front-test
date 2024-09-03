@@ -1,0 +1,66 @@
+.matchModal-title{
+  font-size: 26px;
+  font-weight: bold;
+  color: #2c2c2c;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #D9D9D9;
+  box-sizing: border-box;
+  height: 50px;
+}
+.matchModal-content{
+  display: flex;
+  justify-content: center;
+}
+.matchModal-content p{
+  margin: 70px 0px;
+  font-size: 22px;
+}
+.matchModal-line{
+  margin: 0px;
+  padding: 5px 0px;
+}
+.matchModal-line p{
+  font-weight: bold;
+}
+.matchModal-dashed{
+  border-bottom: 1px solid #D9D9D9;
+  border-bottom-style: dashed;
+}
+.matchModal-price{
+  font-size: 22px !important;
+}
+.matchModal-Num{
+  color: #FF5959;
+}
+.modalContainer{
+  margin-top: 80px;
+  display: flex;
+  width: 340px;
+  justify-content: space-between;
+}
+.matchModalBtn{
+  width: 160px;
+  height: 44px;
+  background-color: #2C2C2C;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 15px 0px 0px;
+}
+.matchModalAgreeBtn{
+  width: 160px;
+  height: 44px;
+  background-color: #fff;
+  color: #2C2C2C;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 15px 0px 0px;
+  border: 2px solid #2C2C2C;
+}
+.blueText{
+  color: #0B74F1;
+}

@@ -1,0 +1,185 @@
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+.header-info {
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-icon {
+  width: 8%;
+  height: 8%;
+}
+
+.home-icon {
+  width: 10%;
+  height: 10%;
+}
+
+.header-name {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.main-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pay-container {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.infomation {
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: -15px;
+  color: #2c2c2c;
+}
+
+.password-container {
+  margin-bottom: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-section {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+
+.graycircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.bluecircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #80BAFF;
+}
+
+.hidden-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/* .main-section {
+  width: 80%;
+  padding: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.go-pay {
+  border-width: 3px;
+  border-color: #80BAFF;
+  background-color: #80BAFF;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  margin-bottom: 5%;
+} */
+
+.go-pay {
+  border-width: 3px;
+  border-color: #80BAFF;
+  background-color: #80BAFF;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  margin-bottom: 5%;
+  width: 80%;
+  padding: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.main-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #888;
+  margin: 10px 0;
+}
+
+.go-pay-text {
+  color: white;
+  font-size: 18px;
+}
+
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 40px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .main-section {
+    padding: 30px;
+  }
+
+  .main-text {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding: 60px;
+  }
+
+  .main-section {
+    padding: 40px;
+  }
+
+  .main-text {
+    font-size: 24px;
+  }
+}

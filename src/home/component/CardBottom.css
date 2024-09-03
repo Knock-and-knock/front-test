@@ -1,0 +1,37 @@
+.cardBottom-container{
+    background-color: #FFC37D;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    /* box-shadow: 0px 2px 5px #888; */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+.blue-bottom{
+    background-color: #B5D7FF !important;
+}
+
+.cardBottom-container p{
+    font-size: 16px;
+    font-weight:bold;
+    color: #2C2C2C;
+    margin: 0px 0px 0px 10px;
+}
+
+.cardBottom-Rseparator{
+    padding-right: 10px;
+    border-right: 1px solid #2C2C2C;
+    margin-right: 10px;
+}
+.cardBottom-Lseparator{
+    padding-left: 10px;
+    border-left: 1px solid #2C2C2C;
+    margin-left: 10px;
+}
+.family-card{
+    opacity: 0.3 !important;
+}

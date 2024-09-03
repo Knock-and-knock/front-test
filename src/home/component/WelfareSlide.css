@@ -1,0 +1,9 @@
+.slide-container{
+    background-color: #FFF8F3;
+    height: 30vh;
+    padding: 20px;
+}
+.slide{
+    width: 100%;
+    object-fit:contain;
+}

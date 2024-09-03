@@ -1,0 +1,52 @@
+.welfarePay-container{
+    padding: 20px;
+}
+
+.information-container-pay{
+    margin-top: 30px;
+}
+  
+.information-pay {
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: -15px;
+    color: #2c2c2c;
+}
+.welfarePay-select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.pay-card {
+    max-width: 100%;
+    height: auto;
+}
+
+.pay-cardNo {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+}
+.goCheckBtn-wrap {
+    width: 90%;
+    height: 60px;
+    padding: 0px 20px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 19.5px;
+    box-sizing: border-box;
+    background-color: #80BAFF;
+    border-radius: 15px;
+}
+  
+.goCheckBtn {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+} 

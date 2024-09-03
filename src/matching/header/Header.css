@@ -1,0 +1,10 @@
+.match-header-wrap{
+  display: flex;
+  height: 12vh;
+  align-items: center;
+  justify-content: center;
+}
+.headtitle{
+  font-size: 22px;
+  font-weight: bolder;
+}

@@ -1,0 +1,29 @@
+.alarm-date{
+    border-bottom: 1px solid #686868;
+    font-size: 16px;
+    color: #2C2C2C;
+}
+.alarmHistory-content{
+    border-bottom: 1px solid #E1E6EC;
+    margin-bottom: 10px;
+}
+.alarm-text{
+    font-size: 18px;
+    color: #2C2C2C;
+    margin: 0px 0px;
+    display: inline-block;
+    width: 90%;
+}
+.alarm-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF5959;
+    float: right;
+}
+.alarm-time{
+    font-size: 16px;
+    color: #A7A7A7;
+    text-align: right;
+    margin: 0px 0px 5px;
+}

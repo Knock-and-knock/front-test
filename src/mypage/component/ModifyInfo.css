@@ -1,0 +1,65 @@
+.modiInfo-container{
+    padding: 20px;
+}
+.infoInput-container{
+    margin-bottom: 40px;
+}
+.infoInput-container input{
+    border: none;
+    border-bottom: 1px solid #E1E6EC;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.bodyInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.bodyInfo-box{
+    display: inline-block;
+    width: 48%;
+}
+.body-content{
+    display: flex; 
+    justify-content: space-between;
+}
+.body-content input{
+    width: 80%;
+}
+.body-content p{
+    margin: 0px 0px;
+}
+.addressInfo{
+    margin-bottom: 16px;
+    width: 90% !important;
+}
+.addressInfo-icon{
+    width: 22px;
+    float: right;
+}
+.modiInfo-saveBtn{
+    width: 100%;
+    height: 60px;
+    background-color: #80BAFF;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.infoInput-glasses{
+    float: right;
+}
+.infoInput-gender{
+    display: inline-block;
+    width: 50%;
+}
+.infoInput-gender p{
+    display: inline-block;
+}
+.infoInput-gender input{
+    display: inline-block;
+    width: 50%;
+}

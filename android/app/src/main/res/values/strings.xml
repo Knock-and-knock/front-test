@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Knock Knock</string>
+    <string name="title_activity_main">Knock Knock</string>
+    <string name="package_name">com.localhost.knockknock</string>
+    <string name="custom_url_scheme">com.localhost.knockknock</string>
+</resources>

@@ -1,0 +1,12 @@
+.consumption-container{
+    padding: 0px 20px;
+}
+.cardlist-none{
+    color: #CCC7C0;
+    font-size: 18px;
+    height: 345px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

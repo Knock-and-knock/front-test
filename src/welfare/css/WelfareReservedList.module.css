@@ -1,0 +1,237 @@
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  background-color: white;
+  min-height: 100vh; /* 전체 높이로 채우기 */
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  border: 1px solid #d9d9d9;
+}
+
+.header {
+  padding: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+.header-info {
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-icon {
+  margin-top: 0%;
+  width: 8%;
+  height: 8%;
+}
+
+.home-icon {
+  margin-top: 0%;
+  width: 10%;
+  height: 10%;
+}
+
+.header-name {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.noItemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80%;
+}
+
+.noItems {
+  margin: 0 auto;
+  font-size: 20px;
+  color: #999;
+  margin-left: 5px;
+}
+
+.main-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #F8FBFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info-container {
+  margin-bottom: 6%;
+}
+
+.user-name {
+  color: #007bff;
+  font-size: 18px;
+}
+
+.for {
+  color: #686868;
+  font-size: 18px;
+}
+
+.main-section {
+  width: 80%;
+  /* padding: 0px 10px 10px 10px; */
+  padding: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+  
+  background-color: white;
+  position: relative;
+}
+
+.detailed-reserve {
+  border-width: 3px;
+  border-color: #ccc;
+  box-shadow: 1px 2px 4px #888;
+  margin-bottom: 30px;
+}
+
+.main-text {
+  font-size: 18px;
+  color: #888;
+  margin: 10px 0;
+}
+
+.detailed-reserved-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.detailed-reserved-date {
+  font-size: 18px;
+  color: #686868;
+}
+
+.detailed-reserved-cancel-container {
+  margin-top: -7px;
+}
+
+.detailed-reserved-info-container1 {
+  margin-top: 14px;
+}
+
+.detailed-reserved-info-container2 {
+  margin-top: -6px;
+  margin-bottom: 15px;
+}
+
+.detailed-reserved-info-container3 {
+  margin-top: -2px;
+  margin-bottom: 8px;
+}
+
+.detailed-reserved-cancel {
+  float: right;
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  border: 1px none;
+  border-radius: 7px;
+  background-color: #FF5959;
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 7%;
+  right: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailed-reserved-text {
+  float: right;
+  font-size: 18px;
+}
+
+.main-info {
+  color: #686868;
+}
+
+.total-price-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.total-price-number {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.main-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 40px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+  }
+
+  .main-section {
+    padding: 30px;
+  }
+
+  .main-text {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding: 60px;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-name {
+    font-size: 28px;
+  }
+
+  .main-section {
+    padding: 40px;
+  }
+
+  .main-text {
+    font-size: 24px;
+  }
+}
