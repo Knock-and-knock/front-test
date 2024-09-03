@@ -25,12 +25,6 @@ jobs:
         with:
           username: ${{secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
-
-      # .env 파일 생성
-      - name: Create .env file
-        run: |
-          echo "REACT_APP_API_URL=${{ secrets.REACT_APP_URL }}" >> .env
-        working-directory: .
   
       - name: Build and Push Docker images
         uses: docker/build-push-action@v6.7.0
@@ -42,36 +36,36 @@ jobs:
           build-args: |
             REACT_APP_API_URL=${{secrets.REACT_APP_URL}}
   
-  deploy-to-server:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ env.EC2_HOST }}
-          username: ${{ env.EC2_SSH_USER }}
-          key: ${{ env.PRIVATE_KEY }}
-          script: |
-            CONTAINER_ID=$(sudo docker ps -q --filter "publish=80-80")
+  # deploy-to-server:
+  #   needs: build-and-push
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Deploy to EC2
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ env.EC2_HOST }}
+  #         username: ${{ env.EC2_SSH_USER }}
+  #         key: ${{ env.PRIVATE_KEY }}
+  #         script: |
+  #           CONTAINER_ID=$(sudo docker ps -q --filter "publish=80-80")
             
-            echo "DOCKER_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" >> ${{env.PROJECT_DIR}}/.env.deploy
-            echo "IMAGE_NAME=${{ env.IMAGE_NAME }}" >> ${{env.PROJECT_DIR}}/.env.deploy
-            echo "IMAGE_TAG=${{ github.sha }}" >> ${{env.PROJECT_DIR}}/.env.deploy
+  #           echo "DOCKER_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" >> ${{env.PROJECT_DIR}}/.env.deploy
+  #           echo "IMAGE_NAME=${{ env.IMAGE_NAME }}" >> ${{env.PROJECT_DIR}}/.env.deploy
+  #           echo "IMAGE_TAG=${{ github.sha }}" >> ${{env.PROJECT_DIR}}/.env.deploy
   
-            if [ ! -z "$CONTAINER_ID" ]; then
-              sudo docker stop $CONTAINER_ID
-              sudo docker rm $CONTAINER_ID
-            fi
+  #           if [ ! -z "$CONTAINER_ID" ]; then
+  #             sudo docker stop $CONTAINER_ID
+  #             sudo docker rm $CONTAINER_ID
+  #           fi
             
-            DOCKER_IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
-            sudo docker pull $DOCKER_IMAGE_NAME
-            #sudo docker run --name ${{ env.CONTAINER_NAME }} -d -p 80:80 $DOCKER_IMAGE_NAME
+  #           DOCKER_IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
+  #           sudo docker pull $DOCKER_IMAGE_NAME
+  #           #sudo docker run --name ${{ env.CONTAINER_NAME }} -d -p 80:80 $DOCKER_IMAGE_NAME
 
-            # Stop and remove existing containers
-            sudo docker-compose -f ${{env.PROJECT_DIR}}/docker-compose.yml down || true
+  #           # Stop and remove existing containers
+  #           sudo docker-compose -f ${{env.PROJECT_DIR}}/docker-compose.yml down || true
 
-            # Deploy Docker containers
-            sudo docker-compose --env-file ${{env.PROJECT_DIR}}/.env.deploy -f ${{env.PROJECT_DIR}}/docker-compose.yml up -d
+  #           # Deploy Docker containers
+  #           sudo docker-compose --env-file ${{env.PROJECT_DIR}}/.env.deploy -f ${{env.PROJECT_DIR}}/docker-compose.yml up -d
 
-            sudo docker image prune -af
+  #           sudo docker image prune -af
