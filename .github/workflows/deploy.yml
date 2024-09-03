@@ -1,8 +1,9 @@
 name: knockknock front deploy
 
 env:
-  IMAGE_NAME: knock-knock-front
+  IMAGE_NAME: knock-knock-front-test
   CONTAINER_NAME: knock-knock-front
+
   EC2_HOST: ${{secrets.EC2_HOST}}
   EC2_SSH_USER: ubuntu
   PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
