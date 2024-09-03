@@ -19,7 +19,7 @@ export function call(api, method, request) {
 
   let options = {
     headers: headers,
-    url: process.env.REACT_APP_URL+api,
+    url: window.env.REACT_APP_URL+api,
     method: method,
     // credentials: 'include',
     body: method !== 'GET' ? JSON.stringify(request) : null,

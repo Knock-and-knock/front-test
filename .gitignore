@@ -19,6 +19,7 @@ yarn-error.log*
 # index.js
 .env
 .env.deploy
+env.js
 
 # docker
 docker-compose.yml
