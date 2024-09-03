@@ -50,26 +50,3 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             podman pull docker.io/${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-            
-            #CONTAINER_ID=$(sudo docker ps -q --filter "publish=80-80")
-            
-            #echo "DOCKER_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" >> ${{env.PROJECT_DIR}}/.env.deploy
-            #echo "IMAGE_NAME=${{ env.IMAGE_NAME }}" >> ${{env.PROJECT_DIR}}/.env.deploy
-            #echo "IMAGE_TAG=${{ github.sha }}" >> ${{env.PROJECT_DIR}}/.env.deploy
-  
-            #if [ ! -z "$CONTAINER_ID" ]; then
-            #  sudo docker stop $CONTAINER_ID
-            #  sudo docker rm $CONTAINER_ID
-            #fi
-            
-            #DOCKER_IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
-            #sudo docker pull $DOCKER_IMAGE_NAME
-            #sudo docker run --name ${{ env.CONTAINER_NAME }} -d -p 80:80 $DOCKER_IMAGE_NAME
-
-            # Stop and remove existing containers
-            #sudo docker-compose -f ${{env.PROJECT_DIR}}/docker-compose.yml down || true
-
-            # Deploy Docker containers
-            #sudo docker-compose --env-file ${{env.PROJECT_DIR}}/.env.deploy -f ${{env.PROJECT_DIR}}/docker-compose.yml up -d
-
-            #sudo docker image prune -af
