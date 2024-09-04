@@ -45,11 +45,11 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            podman login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} docker.io
+            podman login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} docker.io
 
             # Update .env file with the latest image tag
             echo "PROJECT_ROOT=${{ env.PROJECT_DIR }}" > ${{ env.PROJECT_DIR }}/.env.front
-            echo "FRONTEND_DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" > ${{ env.PROJECT_DIR }}/.env.front
+            echo "FRONTEND_DOCKER_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" >> ${{ env.PROJECT_DIR }}/.env.front
             echo "FRONTEND_IMAGE_NAME=${{ env.IMAGE_NAME }}" >> ${{ env.PROJECT_DIR }}/.env.front
             echo "FRONTEND_IMAGE_TAG=${{ github.sha }}" >> ${{ env.PROJECT_DIR }}/.env.front
 
