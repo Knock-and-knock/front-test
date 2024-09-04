@@ -3,6 +3,7 @@ name: knockknock front deploy
 env:
   IMAGE_NAME: knock-knock-front-test
   CONTAINER_NAME: knock-knock-front
+  PROJECT_DIR: /root/project/knock-knock
 
 on:
   push:
@@ -44,4 +45,20 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
+            podman login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} docker.io
+
+            # Update .env file with the latest image tag
+            echo "FRONTEND_DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" > ${{ env.PROJECT_DIR }}/.env
+            echo "FRONTEND_IMAGE_NAME=${{ env.IMAGE_NAME }}" >> ${{ env.PROJECT_DIR }}/.env
+            echo "FRONTEND_IMAGE_TAG=${{ github.sha }}" >> ${{ env.PROJECT_DIR }}/.env
+
             podman pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+            # Stop and remove the existing container
+            podman-compose -f ${{ env.PROJECT_DIR }}/podman-compose3.yml down || true
+
+            # Start the new container using the updated podman-compose3.yml
+            podman-compose -f ${{ env.PROJECT_DIR }}/podman-compose3.yml up -d
+            
+            # Clean up unused Docker images
+            podman image prune -af
